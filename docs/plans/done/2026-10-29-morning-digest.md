@@ -1,8 +1,9 @@
 ---
 plan: morning-digest
-status: ready
+status: done
 owner: rook
 opened: 2026-10-29
+closed: 2026-11-01
 ---
 
 # Morning digest
@@ -77,3 +78,21 @@ page again with `LANE_MARKER` unset (the banner reads "no marker set") and uploa
 link. Move this plan to `docs/plans/done/` with its issue list.
 
 Done when: the preview link no longer shows the lane marker.
+
+## Issues
+
+| # | Issue | Blocked by | Worker | Closed |
+|---|-------|-----------|--------|--------|
+| 1 | Run log reader: types | — | opencode · claude-opus-5.5 · low | 2026-11-01 |
+| 2 | Run log reader: readNight | #1 | opencode · claude-opus-5.5 · default | 2026-11-01 |
+| 3 | Digest page: GET /digest/:night | #1, #2 | opencode · claude-haiku-5.5 · default | 2026-11-01 |
+| 4 | Digest JSON: GET /api/digest/:night | #1, #2 | opencode · claude-haiku-5.5 · default | 2026-11-01 |
+| 5 | Status board: link each night to its digest | #2, #3 | opencode · claude-haiku-5.5 · default | 2026-11-01 |
+| 6 | Route tests for the digest page and JSON | #3, #4 | opencode · claude-haiku-5.5 · default | 2026-11-01 |
+| 7 | Preview for review | #3, #5 | opencode · claude-opus-5.5 · low | 2026-11-01 |
+| 8 | Clean up: marker off, plan to done | #7 | opencode · claude-opus-5.5 · low | 2026-11-01 |
+
+Issues: https://github.com/tomez/rig-handover/issues?q=label%3Aplan%3Amorning-digest
+
+#7 was closed once before the reviewer had looked and was reopened; it closed again when the
+review was in. The preview went up with the marker and lost it after the review (ADR 0003).
